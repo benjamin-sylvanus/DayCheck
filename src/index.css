@@ -12,4 +12,10 @@ code {
     monospace;
 }
 
+.row-width-30 {
+  display: flex;
+  max-width: 30%;
+  width: 30%;
+}
+
 
