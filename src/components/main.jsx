@@ -5,8 +5,7 @@ class Main extends React.Component {
     state={width: 0}
 
     handleSize() {
-        let innerWidth = window.innerWidth;
-        alert(innerWidth);
+        const innerWidth = window.innerWidth;
         if (innerWidth<=600) {
             return 'row-width-70'
         }
