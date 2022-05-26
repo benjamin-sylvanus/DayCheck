@@ -2,6 +2,18 @@ import React from 'react';
 import {Card, Col, Divider, Row} from 'antd';
 
 class Main extends React.Component {
+    state={width: 0}
+
+    handleSize() {
+        let innerWidth = window.innerWidth;
+        alert(innerWidth);
+        if (innerWidth<=600) {
+            return 'row-width-70'
+        }
+        else {
+            return 'row-width-30';
+        }
+    }
     render() {
         return (
             <div style={{
@@ -13,12 +25,12 @@ class Main extends React.Component {
                 flexDirection: "column",
                 rowGap: "2rem"
             }}>
-                <Col className="row-width-30">
+                <Col className={this.handleSize()}>
                     <Card title="Exercise" bordered={true} style={{borderRadius: "1.5rem", flexGrow: 1}}>
                         Went to gym and played basketball.
                     </Card>
                 </Col>
-                <Row className="row-width-30">
+                <Row className={this.handleSize()}>
                     <Card title="Work" bordered={true}
                           style={{
                               borderRadius: "1.5rem",
@@ -44,7 +56,8 @@ class Main extends React.Component {
 
                     </Card>
                 </Row>
-                <Col className="row-width-30">
+
+                <Col className={this.handleSize()}>
                     <Card title="Sleep" bordered={true}
                           style={{
                               borderRadius: "1.5rem",
